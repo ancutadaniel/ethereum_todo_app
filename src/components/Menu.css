@@ -1,0 +1,13 @@
+.ui.inverted.main_menu {
+  border-radius: 0;
+}
+
+.account {
+  color: white;
+  margin: auto;
+  padding-right: 10px;
+}
+
+.account:last-child {
+  margin-bottom: auto;
+}
