@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+You can clone this project from here - https://github.com/ancutadaniel/ethereum_todo_app.git
+
 ## Available Scripts
 
 In the project directory, you can run in terminal:
