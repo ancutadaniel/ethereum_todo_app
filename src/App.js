@@ -133,12 +133,16 @@ const App = () => {
             required
           />
 
-          <Button type='submit'>Submit Task</Button>
+          <Button color='purple' type='submit'>
+            Submit Task
+          </Button>
         </Form>
       </Container>
       <Divider />
       <Container>
-        <Button onClick={taskCount}>Show Tasks</Button>
+        <Button color='green' onClick={taskCount}>
+          Show Tasks
+        </Button>
         <Segment>
           Task Completed
           <Divider />
