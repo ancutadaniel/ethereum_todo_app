@@ -122,73 +122,77 @@ const App = () => {
           </Grid>
         </Container>
       )}
-      <Container>
-        <Form onSubmit={handleSubmit}>
-          <Form.Input
-            label='Create Task'
-            placeholder='Create Task'
-            name='createTask'
-            value={value}
-            onChange={handleChange}
-            required
-          />
+      {!loading && (
+        <>
+          <Container>
+            <Form onSubmit={handleSubmit}>
+              <Form.Input
+                label='Create Task'
+                placeholder='Create Task'
+                name='createTask'
+                value={value}
+                onChange={handleChange}
+                required
+              />
 
-          <Button color='purple' type='submit'>
-            Submit Task
-          </Button>
-        </Form>
-      </Container>
-      <Divider />
-      <Container>
-        <Button color='green' onClick={taskCount}>
-          Show Tasks
-        </Button>
-        <Segment>
-          Task Completed
+              <Button color='purple' type='submit'>
+                Submit Task
+              </Button>
+            </Form>
+          </Container>
           <Divider />
-          <List>
-            {tasks
-              .filter((task) => task.completed)
-              .map((task) => {
-                const { id, content, completed } = task;
-                return (
-                  <List.Item key={id}>
-                    <List.Content>
-                      <Checkbox
-                        label={content}
-                        checked={completed}
-                        onChange={() => handleToggleCompleted(id)}
-                      />
-                    </List.Content>
-                  </List.Item>
-                );
-              })}
-          </List>
-        </Segment>
-        <Divider horizontal>Or</Divider>
-        <Segment>
-          Task in progress
-          <Divider />
-          <List>
-            {tasks
-              .filter((task) => !task.completed)
-              .map((task) => {
-                const { id, content, completed } = task;
-                return (
-                  <List.Item key={id}>
-                    <List.Content>
-                      <Checkbox
-                        label={content}
-                        checked={completed}
-                        onChange={() => handleToggleCompleted(id)}
-                      />
-                    </List.Content>
-                  </List.Item>
-                );
-              })}
-          </List>
-        </Segment>
-      </Container>
+          <Container>
+            <Button color='green' onClick={taskCount}>
+              Show Tasks
+            </Button>
+            <Segment>
+              Task Completed
+              <Divider />
+              <List>
+                {tasks
+                  .filter((task) => task.completed)
+                  .map((task) => {
+                    const { id, content, completed } = task;
+                    return (
+                      <List.Item key={id}>
+                        <List.Content>
+                          <Checkbox
+                            label={content}
+                            checked={completed}
+                            onChange={() => handleToggleCompleted(id)}
+                          />
+                        </List.Content>
+                      </List.Item>
+                    );
+                  })}
+              </List>
+            </Segment>
+            <Divider horizontal>Or</Divider>
+            <Segment>
+              Task in progress
+              <Divider />
+              <List>
+                {tasks
+                  .filter((task) => !task.completed)
+                  .map((task) => {
+                    const { id, content, completed } = task;
+                    return (
+                      <List.Item key={id}>
+                        <List.Content>
+                          <Checkbox
+                            label={content}
+                            checked={completed}
+                            onChange={() => handleToggleCompleted(id)}
+                          />
+                        </List.Content>
+                      </List.Item>
+                    );
+                  })}
+              </List>
+            </Segment>
+          </Container>
+        </>
+      )}
     </div>
   );
 };
